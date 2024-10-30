@@ -1,0 +1,83 @@
+<%- include('partials/header.ejs') %>
+<% if(locals.content){ %>
+    <div class="container col-xxl-8 px-4 py-5 random">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-5">
+            <img src="<%= content.images.jpg.image_url %>" class="d-block mx-lg-auto img-fluid" alt="random anime picture" width="700" height="400" loading="lazy">
+          </div>
+          <div class="col-lg-7">    
+            <h3 class="display-5 fw-bold lh-1 mb-3"><%= content.title %></h3>
+            <p class="lead"><%= content.synopsis %></p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+                    <div class="dropdown-menu position-static d-flex flex-column flex-lg-row align-items-stretch justify-content-start p-3 rounded-3 shadow-lg list">
+                      <nav class="col">
+                        <ul class="list-unstyled d-flex flex-column gap-2">
+                          <li>
+                            <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
+                              <div>
+                                <strong class="d-block">Type: <%= content.type %></strong>
+                              </div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
+                              <div>
+                                <strong class="d-block">Episodes: <%= content.episodes %></strong>
+                              </div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
+                              <div>
+                                <strong class="d-block">Status: <%= content.status %></strong>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  
+                    <div class="dropdown-menu position-static d-flex flex-column flex-lg-row align-items-stretch justify-content-start p-3 rounded-3 shadow-lg list">
+                      <nav class="col">
+                        <ul class="list-unstyled d-flex flex-column gap-2">
+                          <li>
+                            <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
+                              <div>
+                                <strong class="d-block">Aired In: <%= content.aired.prop.from.year %></strong>
+                              </div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
+                              <div>
+                                <strong class="d-block">Rating: <%= content.rating %></strong>
+                              </div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
+                              <div>
+                                <strong class="d-block">Score: <%= content.score %></strong>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<% }else{ %>
+    <div class="container my-5">
+        <div class="p-5 text-center bg-body-tertiary rounded-3">
+          <p class="lead">
+            Resource not found!!!
+          </p>
+        </div>
+    </div>
+<% } %>
+
+<%- include('partials/footer.ejs') %>

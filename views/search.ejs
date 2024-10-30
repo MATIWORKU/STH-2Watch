@@ -1,0 +1,79 @@
+<%- include('partials/header.ejs') %>
+
+<body>
+    <div class="bd-example">
+      <form action="/search" method="get">
+        <div class="d-flex gap-2 justify-content-center align-items-center py-5 px-5">
+          <label for="filter">Filter By:</label>
+          <select name="type" id="type">
+            <option value="tv">Tv</option>
+            <option value="movie">Movie</option>
+            <option value="ova">Ova</option>
+            <option value="special">Special</option>
+            <option value="ona">Ona</option>
+          </select>
+          <select name="status" id="status">
+            <option value="airing">Airing</option>
+            <option value="complete">Complete</option>
+            <option value="upcoming">Upcoming</option>
+          </select>
+          <select name="rating" id="rating">
+            <option value="g">G - All Ages</option>
+            <option value="pg">PG - Children</option>
+            <option value="pg13">PG-13 - Teens 13 or older</option>
+            <option value="r17">R - 17+ (violence & profanity)</option>
+            <option value="r">R+ - Mild Nudity</option>
+            <option value="rx">Rx - Hentai</option>
+          </select>
+          <input type="number" name="min_score" id="score" placeholder="min_score">
+          <input type="text" name="start_date" id="date" placeholder="Y-M-D format">
+          <input type="text" name="q" id="q" placeholder="any name">
+          <button class="btn px-3" type="submit">Apply Filter</button>
+        </div>
+      </form>
+    </div>
+    <% if(locals.contents.length > 0){ %>
+      <div class="container col-xxl-8 px-4 py-5 random">
+        <% contents.forEach(content => {%>
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-1">
+              <div class="col-10 col-sm-8 col-lg-5">
+                <img src="<%= content.images.jpg.image_url %>" class="d-block mx-lg-auto img-fluid" alt="random anime picture" width="300" height="300" loading="lazy">
+              </div>
+              <div class="col-lg-7">    
+                <h3 class="display-5 fw-bold lh-1 mb-3"><%= content.title %></h3>
+                <p class="lead">
+                  <% const synopsis = content.synopsis ? content.synopsis.substring(0 , 150) + "..." : "No description Avaliable." %>
+                  <%= synopsis %>
+                </p>
+              </div>
+            </div>
+        <% }) %>
+      </div>
+
+      <div class="container my-5 random">
+        <div class="row p-5 text-center rounded-3">
+          <div class="col-6">
+            <% if(current_page > 1){ %>
+              <a href="/search?<%= new URLSearchParams({ ...query, page: current_page - 1}).toString() %>">Previous</a>
+            <% } %>
+          </div>
+          <div class="col-6">
+            <% if(has_next_page){ %>
+              <a href="/search?<%= new URLSearchParams({ ...query, page: current_page + 1}).toString() %>">Next</a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    <% }else{ %>
+      <div class="container my-5">
+        <div class="p-5 text-center rounded-3 random">
+          <p class="lead">
+            NO Anime found!!!
+          </p>
+        </div>
+      </div>
+    <% } %>
+    
+</body>
+
+<%- include('partials/footer.ejs') %>

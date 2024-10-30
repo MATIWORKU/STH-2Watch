@@ -1,0 +1,112 @@
+html, body{
+    margin: 0; 
+    padding: 0;
+    height: 100%; 
+    overflow: hidden;
+    height: 100%;
+}
+
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: linear-gradient(300deg, #FAF1E4, #CEDEBD, #9EB384);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 100%;
+    overflow: auto;
+}
+
+@keyframes gradient-animation{
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header{
+    background-color: #435334;
+}
+
+.random{
+    background-color: #E7F0DC;
+}
+
+.list{
+    background-color: #435334;
+}
+
+label{
+    color: #FAF1E4;
+    display: block;
+    margin-bottom: 5px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+select, 
+input[type="text"],
+input[type="number"]{
+    background-color: #FAF1E4;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #424769;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+h3, p {
+    color: #9EB384;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn{
+    background-color: #435334;
+    padding: 10px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+strong{
+    color: #FAF1E4;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+    color: #FAF1E4;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+span{
+    color: #FAF1E4;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+li > a{
+    color: #FAF1E4;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a{
+    color: #435334;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+footer{
+    background-color: #435334;
+}
