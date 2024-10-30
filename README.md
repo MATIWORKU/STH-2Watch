@@ -9,14 +9,8 @@ I used ejs, css, express and axios to develop the site.
 
 
 
-To try it => 
-
-
-          first clone this project. 
-          
-          
+To try it => first clone this project.
           
           Then run "npm install" to download the dependencies. 
-          
           
           Then run the app using "nodemon index.js";
