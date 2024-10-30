@@ -6,4 +6,10 @@ I hope you enjoy the website. Try it. It might give you STH-2Watch.
 
 To develop it I used the Jikan API which is a free API that supports CORS. Check it out if you want. https://jikan.moe/
 I used ejs, css, express and axios to develop the site.
-To try it => first clone this project. Then run "npm install" to download the dependencies. Then run the app using "nodemon index.js";
+
+
+
+To try it =>  
+          first clone this project. 
+          Then run "npm install" to download the dependencies. 
+          Then run the app using "nodemon index.js";
